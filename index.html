@@ -1,194 +1,222 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Text to Handwriting Converter | Realistic Handwriting Generator</title>
-    <meta name="description" content="Convert text to handwriting online for free. Create realistic handwritten notes, assignments, and letters from typed text using our advanced Text to Handwriting tool.">
-    <meta name="keywords" content="text to handwriting, handwriting converter, type to script, realistic handwriting generator, digital notes">
-    <meta name="author" content="Your Website Name">
+    <title>Text to Handwriting Converter | Realistic Paper & Cursive Generator</title>
+    <meta name="description" content="Free online Text to Handwriting converter. Turn typed text into realistic handwritten notes on lined paper, graph paper, or legal pads. Download as image.">
+    <meta name="keywords" content="text to handwriting, handwriting generator, type to script, digital notes, realistic handwriting, online converter">
+    <meta name="author" content="Your Brand Name">
+    <link rel="canonical" href="https://freetexttohandwritingconverter.github.io/" />
     
-    <!-- Google Fonts for Handwriting -->
-    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&family=Gloria+Hallelujah&family=Indie+Flower&family=Kalam&family=Patrick+Hand&family=Sacramento&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <!-- Google Fonts for Handwriting Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Dancing+Script:wght@400;700&family=Gloria+Hallelujah&family=Indie+Flower&family=Kalam:wght@300;400&family=Patrick+Hand&family=Sacramento&family=Shadows+Into+Light&family=Zeyada&display=swap" rel="stylesheet">
     
-    <!-- Schema Markup -->
+    <!-- Schema Markup for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": "Text to Handwriting Converter",
-      "url": "https://yourwebsite.com/text-to-handwriting",
-      "description": "A free online tool to convert typed text into realistic handwriting images.",
-      "applicationCategory": "UtilityApplication",
+      "url": "https://freetexttohandwritingconverter.github.io/",
+      "description": "Convert typed text into realistic handwritten notes on various paper types.",
+      "applicationCategory": "Productivity",
       "operatingSystem": "All",
       "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD"
-      },
-      "featureList": "Convert text to image, multiple handwriting fonts, adjustable paper styles"
+      }
     }
     </script>
 
     <style>
         :root {
-            --primary-color: #4a90e2;
-            --bg-color: #f4f7f6;
-            --panel-bg: #ffffff;
-            --text-color: #333;
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --bg-color: #f3f4f6;
+            --surface: #ffffff;
+            --text-main: #1f2937;
         }
 
+        * { box-sizing: border-box; }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-color);
+            color: var(--text-main);
             margin: 0;
             padding: 0;
             line-height: 1.6;
         }
 
-        /* Header */
+        /* Header Styles */
         header {
-            background: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 20px 0;
+            padding: 40px 20px;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
-        header h1 { margin: 0; font-size: 2.5rem; }
-        header p { margin: 5px 0 0; opacity: 0.9; }
+        header h1 { margin: 0; font-size: 2.5rem; font-weight: 700; letter-spacing: -0.5px; }
+        header p { margin-top: 10px; font-size: 1.1rem; opacity: 0.9; }
 
-        /* Main Container */
+        /* Main Layout */
         .container {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 0 20px;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 30px 20px;
             display: flex;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 40px;
         }
 
-        /* Tool Section */
-        .tool-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            gap: 20px;
-        }
-
-        .controls {
+        /* Sidebar Controls */
+        .controls-panel {
             flex: 1;
             min-width: 300px;
-            background: var(--panel-bg);
+            background: var(--surface);
             padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             height: fit-content;
         }
 
-        .preview-area {
-            flex: 2;
-            min-width: 300px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-        }
-
-        /* Inputs & Controls */
-        label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
+        .input-group { margin-bottom: 20px; }
+        label { display: block; font-weight: 600; margin-bottom: 8px; color: #4b5563; }
+        
         textarea {
             width: 100%;
             height: 150px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            padding: 12px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 16px;
             resize: vertical;
-            font-family: inherit;
-            margin-bottom: 15px;
+            transition: border-color 0.2s;
         }
+        textarea:focus { outline: none; border-color: var(--primary); }
 
         select, input[type="color"], input[type="range"] {
             width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .btn-group { display: flex; gap: 10px; margin-top: 10px; }
-        
-        button {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            border-radius: 5px;
+            padding: 10px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            background: white;
             cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
         }
 
-        .btn-primary { background: var(--primary-color); color: white; }
-        .btn-primary:hover { background: #357abd; }
-        .btn-reset { background: #e74c3c; color: white; }
+        /* Buttons */
+        .action-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 10px;
+        }
+        .action-btn:hover { background-color: var(--secondary); }
 
-        /* The Paper Output */
+        /* Output Area */
+        .preview-panel {
+            flex: 2;
+            min-width: 320px;
+            display: flex;
+            justify-content: center;
+            background: #e5e7eb;
+            padding: 20px;
+            border-radius: 12px;
+            overflow: auto;
+        }
+
+        /* --- REALISTIC PAPER STYLES --- */
         #paper-output {
             width: 100%;
-            max-width: 600px;
-            min-height: 700px;
-            background-color: #fff;
-            padding: 40px 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            max-width: 650px; /* Standard A4ish width */
+            min-height: 800px;
             position: relative;
-            overflow: hidden;
             color: #1a1a1d;
-            font-size: 18px;
-            line-height: 1.5;
+            font-size: 24px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1), 0 0 2px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
+            overflow: hidden;
         }
 
-        /* Paper Styles (Classes) */
-        .paper-plain { background: #fff; }
+        /* 1. Ruled Paper (Lined with Margin) */
         .paper-ruled {
-            background-image: repeating-linear-gradient(white 0px, white 29px, #94a0b4 30px);
-            line-height: 30px !important;
-            padding-top: 32px !important;
-        }
-        .paper-vintage {
-            background-color: #fdf6e3;
-            background-image: radial-gradient(#dccfba 1px, transparent 1px);
-            background-size: 20px 20px;
+            background-color: #fff;
+            /* Vertical Red Line + Horizontal Blue Lines */
+            background-image: 
+                linear-gradient(90deg, transparent 79px, #ff9494 80px, transparent 81px),
+                linear-gradient(#e1e1e1 1px, transparent 1px);
+            background-size: 100% 100%, 100% 32px; /* 32px Line Height */
+            line-height: 32px !important;
+            padding: 0 30px 30px 30px;
+            padding-top: 32px; /* Start perfectly on a line */
+            padding-left: 95px !important; /* Text starts after red line */
         }
 
-        /* SEO Content Section */
-        .content-section {
+        /* 2. Yellow Legal Pad */
+        .paper-yellow {
+            background-color: #fdfcce;
+            background-image: 
+                linear-gradient(90deg, transparent 79px, #ff9494 80px, transparent 81px),
+                linear-gradient(#c2c2a3 1px, transparent 1px);
+            background-size: 100% 100%, 100% 32px;
+            line-height: 32px !important;
+            padding: 0 30px 30px 30px;
+            padding-top: 32px;
+            padding-left: 95px !important;
+        }
+
+        /* 3. Graph Paper */
+        .paper-graph {
+            background-color: #fff;
+            background-image: 
+                linear-gradient(#d4d4d4 1px, transparent 1px),
+                linear-gradient(90deg, #d4d4d4 1px, transparent 1px);
+            background-size: 25px 25px; /* Grid Size */
+            line-height: 50px !important; /* Text spans 2 blocks vertically */
+            padding: 26px !important;
+        }
+
+        /* 4. Plain Paper */
+        .paper-plain {
+            background-color: #fff;
+            padding: 50px;
+            line-height: 1.5 !important;
+        }
+
+        /* SEO Content */
+        .content-article {
             width: 100%;
-            background: var(--panel-bg);
+            background: var(--surface);
             padding: 40px;
-            border-radius: 10px;
-            margin-top: 40px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            margin-top: 20px;
         }
-
-        .content-section h2 { color: var(--primary-color); }
-        .content-section h3 { color: #555; margin-top: 25px; }
-        .faq-item { margin-bottom: 20px; }
-        .faq-item h4 { margin-bottom: 5px; }
-
-        /* Footer */
+        .content-article h2 { color: var(--secondary); margin-top: 0; }
+        .content-article h3 { margin-top: 25px; color: #374151; }
+        
         footer {
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            color: #777;
+            padding: 30px;
+            color: #6b7280;
             font-size: 0.9rem;
+            margin-top: 40px;
         }
 
         @media (max-width: 768px) {
             .container { flex-direction: column; }
-            .preview-area { order: -1; } /* Show preview first on mobile if desired, or keep as is */
+            .preview-panel { order: -1; }
         }
     </style>
 </head>
@@ -196,152 +224,157 @@
 
     <header>
         <h1>Text to Handwriting Converter</h1>
-        <p>Turn digital text into realistic handwritten notes instantly.</p>
+        <p>Transform digital text into realistic handwritten notes instantly.</p>
     </header>
 
     <div class="container">
         
-        <!-- Tool Wrapper -->
-        <div class="tool-wrapper">
-            
-            <!-- Controls Sidebar -->
-            <div class="controls">
-                <h3>Settings</h3>
-                
-                <label for="textInput">Type your text here:</label>
-                <textarea id="textInput" placeholder="Type something here to convert it into handwriting..."></textarea>
+        <div class="controls-panel">
+            <div class="input-group">
+                <label for="textInput">Enter Text:</label>
+                <textarea id="textInput" placeholder="Type or paste your text here..."></textarea>
+            </div>
 
+            <div class="input-group">
                 <label for="fontSelect">Handwriting Style:</label>
                 <select id="fontSelect">
                     <option value="'Indie Flower', cursive">Indie Flower (Casual)</option>
-                    <option value="'Dancing Script', cursive">Dancing Script (Cursive)</option>
                     <option value="'Caveat', cursive">Caveat (Natural)</option>
+                    <option value="'Dancing Script', cursive">Dancing Script (Cursive)</option>
                     <option value="'Shadows Into Light', cursive">Shadows Into Light (Neat)</option>
                     <option value="'Kalam', cursive">Kalam (Marker)</option>
-                    <option value="'Sacramento', cursive">Sacramento (Elegant)</option>
-                    <option value="'Patrick Hand', cursive">Patrick Hand (Notes)</option>
-                    <option value="'Gloria Hallelujah', cursive">Gloria Hallelujah (Fun)</option>
+                    <option value="'Gloria Hallelujah', cursive">Gloria Hallelujah (Funny)</option>
+                    <option value="'Sacramento', cursive">Sacramento (Fancy)</option>
+                    <option value="'Zeyada', cursive">Zeyada (Messy)</option>
                 </select>
-
-                <label for="paperType">Paper Type:</label>
-                <select id="paperType">
-                    <option value="paper-plain">Plain White</option>
-                    <option value="paper-ruled">Ruled Line</option>
-                    <option value="paper-vintage">Vintage / Dotted</option>
-                </select>
-
-                <label for="inkColor">Ink Color:</label>
-                <input type="color" id="inkColor" value="#1a1a1d">
-
-                <label for="fontSize">Font Size:</label>
-                <input type="range" id="fontSize" min="12" max="40" value="22">
-
-                <div class="btn-group">
-                    <button class="btn-primary" id="downloadBtn">Download Image</button>
-                    <!-- <button class="btn-reset" id="resetBtn">Reset</button> -->
-                </div>
             </div>
 
-            <!-- Preview Area -->
-            <div class="preview-area">
-                <div id="paper-output" class="paper-plain" style="font-family: 'Indie Flower', cursive;">
-                    Type something in the text box to see the magic happen! This tool helps you convert your digital text into human-like handwriting style.
-                </div>
+            <div class="input-group">
+                <label for="paperSelect">Paper Type:</label>
+                <select id="paperSelect">
+                    <option value="paper-ruled">Lined Notebook (Ruled)</option>
+                    <option value="paper-yellow">Yellow Legal Pad</option>
+                    <option value="paper-graph">Graph / Grid Paper</option>
+                    <option value="paper-plain">Plain White</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="inkColor">Ink Color:</label>
+                <input type="color" id="inkColor" value="#1a202c">
+            </div>
+
+            <div class="input-group">
+                <label for="fontSize">Font Size:</label>
+                <input type="range" id="fontSize" min="16" max="40" value="24">
+            </div>
+
+            <button class="action-btn" id="downloadBtn">Download Image (PNG)</button>
+        </div>
+
+        <div class="preview-panel">
+            <div id="paper-output" class="paper-ruled" style="font-family: 'Indie Flower', cursive;">
+                Start typing in the box to convert your text into handwriting. 
+                <br><br>
+                This tool simulates real paper textures and handwriting fonts to create authentic-looking documents.
             </div>
         </div>
 
-        <!-- SEO Content Article -->
-        <article class="content-section">
-            <h2>About the Text to Handwriting Tool</h2>
-            <p>In the digital age, typing is fast, but handwriting adds a personal touch. Our <strong>Text to Handwriting Converter</strong> is a free online tool designed to transform your typed text into realistic-looking handwritten scripts. Whether you need to generate images for project assignments, create personalized digital letters, or simply enjoy the aesthetic of cursive writing, this tool is perfect for you.</p>
+        <!-- SEO Content Section -->
+        <article class="content-article">
+            <h2>Why Use a Text to Handwriting Converter?</h2>
+            <p>In a world dominated by digital screens, the personal touch of handwriting stands out. Our <strong>Text to Handwriting tool</strong> allows you to generate realistic handwritten documents without picking up a pen. Whether you are creating study notes, personalized letters, or artistic project assets, this converter bridges the gap between digital convenience and analog aesthetics.</p>
 
-            <h3>How It Works</h3>
-            <p>Using advanced web technologies and a curated selection of Google Fonts, this converter maps your keyboard strokes to handwritten characters instantly. The rendering happens directly in your browser, ensuring your data remains private and the process is lightning fast.</p>
-
-            <h3>Key Features</h3>
+            <h3>Features of Our Handwriting Generator</h3>
             <ul>
-                <li><strong>Multiple Handwriting Styles:</strong> Choose from cursive, block, or artistic styles like 'Dancing Script' or 'Caveat'.</li>
-                <li><strong>Customizable Paper:</strong> Switch between plain white, ruled notebook lines, or vintage textures.</li>
-                <li><strong>Ink Control:</strong> Change the font size and ink color (Blue, Black, Red, etc.) to match your needs.</li>
-                <li><strong>Instant Download:</strong> Save your work as a high-quality image (PNG) with one click.</li>
+                <li><strong>Realistic Paper Backgrounds:</strong> Choose from Lined Notebook paper, Graph paper for math notes, or Classic Yellow Legal pads.</li>
+                <li><strong>Diverse Font Selection:</strong> We utilize top-tier Google Fonts to provide styles ranging from neat cursive to casual marker strokes.</li>
+                <li><strong>High-Quality Export:</strong> Download your creations as crisp PNG images suitable for printing or sharing on social media.</li>
+                <li><strong>Privacy Focused:</strong> All conversion happens in your browser. Your text is never sent to a server.</li>
             </ul>
 
-            <h3>Frequently Asked Questions (FAQ)</h3>
-            
-            <div class="faq-item">
-                <h4>Is this Text to Handwriting tool free?</h4>
-                <p>Yes, this tool is 100% free to use with no hidden charges or subscription fees.</p>
-            </div>
-
-            <div class="faq-item">
-                <h4>Can I use the generated images for commercial purposes?</h4>
-                <p>Yes, the fonts used are open-source (OFL), allowing you to use the generated images for personal and commercial projects.</p>
-            </div>
-
-            <div class="faq-item">
-                <h4>Does the tool support languages other than English?</h4>
-                <p>The tool supports any language that the selected fonts support. Most Latin-based languages are fully supported.</p>
-            </div>
+            <h3>How to Convert Text to Handwriting?</h3>
+            <ol>
+                <li>Type or paste your content into the text box.</li>
+                <li>Select a handwriting style that fits your mood.</li>
+                <li>Choose the paper background (Lined, Graph, or Plain).</li>
+                <li>Adjust the ink color and font size for a perfect fit.</li>
+                <li>Click "Download Image" to save your note.</li>
+            </ol>
         </article>
 
     </div>
 
     <footer>
-        <p>&copy; 2023 Text to Handwriting Converter. All Rights Reserved.</p>
+        <p>&copy; 2024 Text to Handwriting Tool. Designed for Creativity.</p>
     </footer>
 
-    <!-- Scripts -->
+    <!-- html2canvas Library for downloading the image -->
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
     <script>
+        // DOM Elements
         const textInput = document.getElementById('textInput');
         const output = document.getElementById('paper-output');
         const fontSelect = document.getElementById('fontSelect');
-        const paperType = document.getElementById('paperType');
+        const paperSelect = document.getElementById('paperSelect');
         const inkColor = document.getElementById('inkColor');
         const fontSize = document.getElementById('fontSize');
         const downloadBtn = document.getElementById('downloadBtn');
 
-        // Update Text
+        // Event Listeners
+        
+        // 1. Text Typing
         textInput.addEventListener('input', (e) => {
+            // Replace newlines with <br> for HTML rendering
             output.innerText = e.target.value;
             if(e.target.value === '') {
-                 output.innerText = "Type something in the text box to see the magic happen...";
+                 output.innerHTML = "Start typing in the box to see the magic happen...";
             }
         });
 
-        // Update Font
+        // 2. Change Font Family
         fontSelect.addEventListener('change', (e) => {
             output.style.fontFamily = e.target.value;
         });
 
-        // Update Paper
-        paperType.addEventListener('change', (e) => {
+        // 3. Change Paper Type (and auto-adjust font size for lines)
+        paperSelect.addEventListener('change', (e) => {
             output.className = e.target.value;
+            
+            // Auto-adjustment logic for lined paper to keep text on lines
+            if(e.target.value === 'paper-ruled' || e.target.value === 'paper-yellow') {
+                output.style.fontSize = '24px';
+                fontSize.value = 24;
+            } else if (e.target.value === 'paper-graph') {
+                output.style.fontSize = '26px';
+                fontSize.value = 26;
+            }
         });
 
-        // Update Color
+        // 4. Change Ink Color
         inkColor.addEventListener('input', (e) => {
             output.style.color = e.target.value;
         });
 
-        // Update Size
+        // 5. Change Font Size manually
         fontSize.addEventListener('input', (e) => {
             output.style.fontSize = e.target.value + 'px';
-            // Adjust line height slightly for ruled paper if font gets too big
-            if(output.classList.contains('paper-ruled')) {
-                 // Keep ruled paper strict or allow flexibility? Let's keep strict for realism
-                 // Or dynamic: output.style.lineHeight = (parseInt(e.target.value) + 10) + 'px';
-            }
         });
 
-        // Download Function
+        // 6. Download Function
         downloadBtn.addEventListener('click', () => {
+            // Scroll to top to ensure capture is correct
+            window.scrollTo(0,0);
+            
             html2canvas(output, {
-                scale: 2, // High resolution
-                useCORS: true
+                scale: 2, // 2x scale for better quality (Retina)
+                backgroundColor: null, // Transparent background if paper has none
+                useCORS: true,
+                logging: false
             }).then(canvas => {
                 const link = document.createElement('a');
-                link.download = 'handwriting-note.png';
+                link.download = 'my-handwriting-note.png';
                 link.href = canvas.toDataURL('image/png');
                 link.click();
             });
